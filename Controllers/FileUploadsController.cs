@@ -95,7 +95,7 @@ namespace Temoignage.API.Controllers
             if (HttpContext.Current.Request.Files.AllKeys.Any())
             {
                 // Get the uploaded image from the Files collection  
-                var httpPostedFile = HttpContext.Current.Request.Files["UploadedImage"];
+                var httpPostedFile = HttpContext.Current.Request.Files["avatar"];
                 if (httpPostedFile != null)
                 {
                     FileUpload imgupload = new FileUpload();

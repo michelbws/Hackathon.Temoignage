@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Temoignage.API",
+    "\\Temoignage.API\\Controllers",
+    "\\Temoignage.API\\Models"
   ],
-  "SelectedNode": "\\Temoignage.Client.sln",
   "PreviewInSolutionExplorer": false
 }
