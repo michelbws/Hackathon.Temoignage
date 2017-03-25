@@ -1,0 +1,23 @@
+Bien présenter le problème
+
+Bien présenter la solution
+
+Bien présenter la démarche
+
+Avoir un nom d'équipe
+
+Tests unitaires?
+
+Sur quel ordinateur sera présenté le projet
+
+
+
+
+
+---------------------- TO DO
+
+Page simple d'upload
+
+Hébergement dans Azure
+
+
