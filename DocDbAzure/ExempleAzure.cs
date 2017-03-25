@@ -54,7 +54,6 @@ namespace NeuroParser
             var response = await docClient.UpsertDocumentAsync(collUri, temoignage, disableAutomaticIdGeneration: true);
         }
 
-        public async static 
 
         //public static async Task<string> GetPage(int pageNumber)
         //{
