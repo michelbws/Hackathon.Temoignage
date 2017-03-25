@@ -1,0 +1,6 @@
+C:\Users\Nedim Sacic\Source\Repos\Hackathon.Temoignage\DocumentDB\bin\Debug\DocumentDB.exe.config
+C:\Users\Nedim Sacic\Source\Repos\Hackathon.Temoignage\DocumentDB\bin\Debug\DocumentDB.exe
+C:\Users\Nedim Sacic\Source\Repos\Hackathon.Temoignage\DocumentDB\bin\Debug\DocumentDB.pdb
+C:\Users\Nedim Sacic\Source\Repos\Hackathon.Temoignage\DocumentDB\obj\Debug\DocumentDB.csprojResolveAssemblyReference.cache
+C:\Users\Nedim Sacic\Source\Repos\Hackathon.Temoignage\DocumentDB\obj\Debug\DocumentDB.exe
+C:\Users\Nedim Sacic\Source\Repos\Hackathon.Temoignage\DocumentDB\obj\Debug\DocumentDB.pdb
