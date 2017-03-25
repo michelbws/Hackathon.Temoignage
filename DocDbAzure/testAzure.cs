@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DocDbAzure
 {
-    public class Class1
+    public class TestAzure
     {
+        TemoingnageJsn _tjsn = new TemoingnageJsn();
+        
+
     }
 }
