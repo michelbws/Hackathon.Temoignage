@@ -32,8 +32,6 @@ namespace DocumentDBAzureTest
         public void InsertDocument_TemoignageJsn()
         {
             DocDbAzure.InsertDocument(_temoignagejsn);
-            
-            
         }
 
         [TestMethod]
