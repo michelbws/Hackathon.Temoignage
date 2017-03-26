@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.Azure.Documents.Client;
+using System.Threading.Tasks;
 
 namespace Temoignage.API.DocumentDBAzure
 {
@@ -22,12 +23,15 @@ namespace Temoignage.API.DocumentDBAzure
             var response = docClient.UpsertDocumentAsync(collTemoignageUri, temoignage, disableAutomaticIdGeneration: true).Result;
         }
 
-        public async static void InsertDocument(TemoingnageJsn temoignage)
+        public static void InsertDocument(TemoingnageJsn temoignage)
         {
             try
             {
                 //var reponse = docClient.CreateDocumentAsync(collTemoignageUri, temoignage).Result;
-                await docClient.CreateDocumentAsync(collTemoignageUri, temoignage).ConfigureAwait(false);
+
+                Task.Factory.StartNew(() => {
+                        docClient.CreateDocumentAsync(collTemoignageUri, temoignage).ConfigureAwait(false);
+                });
             }
             catch (Exception e)
             {
