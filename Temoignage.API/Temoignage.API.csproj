@@ -221,6 +221,7 @@
     <Compile Include="Controllers\AlertController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MichelController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\VideoUploadController.cs" />
     <Compile Include="DocumentDBAzure\ClientJsn.cs" />
@@ -324,6 +325,7 @@
     <Folder Include="UploadedFiles\" />
     <Folder Include="Views\Alert\" />
     <Folder Include="Views\ImageUpload\" />
+    <Folder Include="Views\Michel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
