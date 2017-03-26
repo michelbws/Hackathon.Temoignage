@@ -9,7 +9,7 @@ namespace Temoignage.API.Models
     public class FileUploadContext : DbContext
     {
         public FileUploadContext() : base("name=DefaultConnection") { }
-        public DbSet<FileUpload> fileUpload
+        public DbSet<DescriptionErreur> fileUpload
         {
             get;
             set;
