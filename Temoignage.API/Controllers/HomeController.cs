@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,31 +14,30 @@ namespace Temoignage.API.Controllers
     public class HomeController : ApiController
     {
          
-        public DescriptionErreur Get(string Id, string gps, string url, string alt, string metaData, 
+        public ImageUpload Get(string Id, string gps, string url, string alt, string metaData, 
                                         string textDescription, Int32 ratio)
         {
-            
+            ImageUpload imgInfoObj = new ImageUpload(Id, gps, url, alt, metaData, textDescription, ratio);
             TemoingnageJsn infoImg = new TemoingnageJsn { ClientId = Id, Description = textDescription, Gps = gps,
             ImageData = metaData, AltDescription = alt, RatioImportance = ratio, UrlImage = url};
 
+            DocDbAzure.InsertDocument(infoImg);
             
-            DescriptionErreur descErreur = new DescriptionErreur();
-            descErreur = ValidateDataInfo(infoImg);
+            ImageUpload descErreur = new ImageUpload();
+            //descErreur = ValidateDataInfo(infoImg);
 
-
-            if (String.IsNullOrEmpty(Id))
-                throw new Exception("the message ");
-                return e.Message;
+            return imgInfoObj;
+           
         }
         
 
-        private DescriptionErreur ValidateDataInfo(TemoingnageJsn infoImg)
-        {
-            throw new NotImplementedException();
+        //private ImageUpload ValidateDataInfo(TemoingnageJsn infoImg)
+        //{
+        //    throw new NotImplementedException();
 
-        }
+        //}
 
-        public class DescriptionErreur
+        public class ImageUpload
         {
             public string clientId;
                         
@@ -53,9 +53,9 @@ namespace Temoignage.API.Controllers
             
             public string gps;
 
-            public DescriptionErreur() { }
+            public ImageUpload() { }
            
-            public DescriptionErreur( string Id, string gps, string url, string alt, string metaData,
+            public ImageUpload( string Id, string gps, string url, string alt, string metaData,
                                         string textDescription, Int32 ratio)
             {
                 this.clientId = Id;
@@ -66,54 +66,19 @@ namespace Temoignage.API.Controllers
                 this.ratioImportance = ratio;
                 this.imageURL = url;
             }
+
+            public Boolean ValidateEmpty(ImageUpload descErreur)
+            {
+                string errorMsg = "";
+                Boolean valide = true;
+                if (String.IsNullOrEmpty(descErreur.clientId))
+                {
+                    errorMsg = "ID client null ou vide";
+                    valide = false;
+                }
+                return valide;
+            }
+
         }
     }
-
-
-
-
-        //    public Media get(string clientId, int id, string username )
-
-        //    {
-
-        //        //ViewBag.Title = "Home Page";
-        //        Media tMedia = new Media(clientId, id, username);
-        //        tMedia.insert ou create 
-        //        return tMedia;
-        //    }
-        //}
-        //public class Media
-        //{
-        //    public string file;
-
-        //    public int id;
-
-        //    public string username;
-
-
-        //    public Media()
-        //    {
-        //        this.file = "astring";
-        //    }
-
-        //    public Media(string file, int id, string username)
-        //    {
-        //        this.file = file;
-        //        this.id = id;
-        //        this.username = username;
-        //    }
-
-    
-    //private void uploadwholefile(httprequestbase request)
-    //{
-    //    for (int i = 0; i < request.files.count; i++)
-    //    {
-    //        var file = request.files[i];
-
-    //        var ext = new fileinfo(file.filename).extension;
-    //        var fullpath = path.combine(storageroot, path.getfilename(guid.newguid() + ext));
-
-    //        file.saveas(fullpath);
-    //    }
-    //}
 }
