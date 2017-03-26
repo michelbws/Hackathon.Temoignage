@@ -2,6 +2,7 @@
 using System.Net.Mime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Temoignage.API.DocumentDBAzure;
+using Temoignage.API.ImageCognitive;
 
 namespace DocumentDBAzureTest
 {
@@ -38,6 +39,12 @@ namespace DocumentDBAzureTest
         public void InsertDocument_Client()
         {
             DocDbAzure.InsertDocument(_clientJsn);
+        }
+
+        [TestMethod]
+        public void TestCognitive()
+        {
+            ExempleCognitive.Execute();
         }
     }
 }
