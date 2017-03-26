@@ -23,21 +23,51 @@ namespace Temoignage.API.Controllers
             
             DescriptionErreur descErreur = new DescriptionErreur();
             descErreur = ValidateDataInfo(infoImg);
-            try
-            {
-                
-            }
-            catch(Exception e) {
 
+
+            if (String.IsNullOrEmpty(Id))
+                throw new Exception("the message ");
                 return e.Message;
-            }
         }
+        
 
         private DescriptionErreur ValidateDataInfo(TemoingnageJsn infoImg)
         {
             throw new NotImplementedException();
 
         }
+
+        public class DescriptionErreur
+        {
+            public string clientId;
+                        
+            public string imageURL;
+            
+            public string alt;
+            
+            public Int32 ratioImportance;
+            
+            public string metaData;
+                       
+            public string textDescription;
+            
+            public string gps;
+
+            public DescriptionErreur() { }
+           
+            public DescriptionErreur( string Id, string gps, string url, string alt, string metaData,
+                                        string textDescription, Int32 ratio)
+            {
+                this.clientId = Id;
+                this.textDescription = textDescription;
+                this.gps = gps;
+                this.metaData = metaData;
+                this.alt = alt;
+                this.ratioImportance = ratio;
+                this.imageURL = url;
+            }
+        }
+    }
 
 
 
@@ -73,7 +103,7 @@ namespace Temoignage.API.Controllers
         //        this.username = username;
         //    }
 
-    }
+    
     //private void uploadwholefile(httprequestbase request)
     //{
     //    for (int i = 0; i < request.files.count; i++)
