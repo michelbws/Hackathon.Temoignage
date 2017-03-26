@@ -27,7 +27,7 @@ namespace Temoignage.API.DocumentDBAzure
             try
             {
                 //var reponse = docClient.CreateDocumentAsync(collTemoignageUri, temoignage).Result;
-                await docClient.CreateDocumentAsync(collTemoignageUri, temoignage);
+                await docClient.CreateDocumentAsync(collTemoignageUri, temoignage).ConfigureAwait(false);
             }
             catch (Exception e)
             {
