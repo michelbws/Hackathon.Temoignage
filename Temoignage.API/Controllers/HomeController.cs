@@ -21,7 +21,7 @@ namespace Temoignage.API.Controllers
             TemoingnageJsn infoImg = new TemoingnageJsn { ClientId = Id, Description = textDescription, Gps = gps,
             ImageData = metaData, AltDescription = alt, RatioImportance = ratio, UrlImage = url};
 
-            //DocDbAzure.InsertDocument(infoImg);
+            DocDbAzure.InsertDocument(infoImg);
             
             //ImageUpload descErreur = new ImageUpload();
             ////descErreur = ValidateDataInfo(infoImg);
