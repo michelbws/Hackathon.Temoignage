@@ -1,28 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Newtonsoft.Json;
-
 namespace Temoignage.API.DocumentDBAzure
 {
     public class TemoingnageJsn
     {
-        [JsonProperty(PropertyName = "temoinID")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "clientID")]
+        public string ClientId { get; set; }
 
-        [JsonProperty(PropertyName = "gps")]
-        public string Name { get; set; }
-
-        [JsonProperty(PropertyName = "urlImage")]
+        [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
 
-        [JsonProperty(PropertyName = "urlVideo")]
-        public bool Completed { get; set; }
+        [JsonProperty(PropertyName = "altDescription")]
+        public string Name { get; set; }
 
-        [JsonProperty(PropertyName = "poidImportance")]
-        public Int32 PoidImportance { get; set; }
+        [JsonProperty(PropertyName = "gps")]
+        public string Gps { get; set; }
+
+        [JsonProperty(PropertyName = "urlImage")]
+        public string UrlImage { get; set; }
+
+        [JsonProperty(PropertyName = "urlVideo")]
+        public string UrlVideo{ get; set; }
+
+        [JsonProperty(PropertyName = "ratioImportance")]
+        public Int32 RatioImportance { get; set; }
+
+        [JsonProperty(PropertyName = "imageData")]
+        public Image ImageData { get; set; }
+
     }
+
 }
