@@ -9,46 +9,57 @@ using System.Web.Http;
 
 namespace Temoignage.API.Models
 {
-    public class ImageUpload
+    public class DescriptionErreur
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string clientId
-        {
-            get;
-            set;
-        }
-        
-        public string imageURL
-        {
-            get;
-            set;
-        }
-        public string alt
-        {
-            get;
-            set;
-        }
-        public Int32 ratioImportance 
-        {
-            get;
-            set;
-        }
-        public string metaData
-        {
-            get;
-            set;
-        }
-        public string textDescription
-        {
-            get;
-            set;
-        }
-        public string gps
-        {
-            get;
-            set;
-        }
 
-    }
+        public string typeErreur
+        {
+            get;
+            set;
+        }
+        public string messageErreur
+        {
+            get;
+            set;
+        }
+    //    [Key]
+    //    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    //    public string clientId
+    //    {
+    //        get;
+    //        set;
+    //    }
+        
+    //    public string imageURL
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public string alt
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public Int32 ratioImportance 
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public string metaData
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public string textDescription
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //    public string gps
+    //    {
+    //        get;
+    //        set;
+    //    }
+
+    //}
 }

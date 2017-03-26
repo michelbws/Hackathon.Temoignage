@@ -13,52 +13,65 @@ namespace Temoignage.API.Controllers
     public class HomeController : ApiController
     {
          
-        public ImageUpload Get(string Id, string gps, string url, string alt, string metaData, 
+        public DescriptionErreur Get(string Id, string gps, string url, string alt, string metaData, 
                                         string textDescription, Int32 ratio)
         {
             
-            TemoingnageJsn img = new TemoingnageJsn { ClientId = Id, Description = textDescription, Gps = gps,
+            TemoingnageJsn infoImg = new TemoingnageJsn { ClientId = Id, Description = textDescription, Gps = gps,
             ImageData = metaData, AltDescription = alt, RatioImportance = ratio, UrlImage = url};
+
+            
+            DescriptionErreur descErreur = new DescriptionErreur();
+            descErreur = ValidateDataInfo(infoImg);
             try
             {
                 
             }
-            catch(Exception e) { }
+            catch(Exception e) {
+
+                return e.Message;
+            }
+        }
+
+        private DescriptionErreur ValidateDataInfo(TemoingnageJsn infoImg)
+        {
+            throw new NotImplementedException();
+
         }
 
 
 
 
-    //    public Media get(string clientId, int id, string username )
-        
-    //    {
-            
-    //        //ViewBag.Title = "Home Page";
-    //        Media tMedia = new Media(clientId, id, username);
-    //        tMedia.insert ou create 
-    //        return tMedia;
-    //    }
-    //}
-    //public class Media
-    //{
-    //    public string file;
+        //    public Media get(string clientId, int id, string username )
 
-    //    public int id;
+        //    {
 
-    //    public string username;
+        //        //ViewBag.Title = "Home Page";
+        //        Media tMedia = new Media(clientId, id, username);
+        //        tMedia.insert ou create 
+        //        return tMedia;
+        //    }
+        //}
+        //public class Media
+        //{
+        //    public string file;
+
+        //    public int id;
+
+        //    public string username;
 
 
-    //    public Media()
-    //    {
-    //        this.file = "astring";
-    //    }
+        //    public Media()
+        //    {
+        //        this.file = "astring";
+        //    }
 
-    //    public Media(string file, int id, string username)
-    //    {
-    //        this.file = file;
-    //        this.id = id;
-    //        this.username = username;
-    //    }
+        //    public Media(string file, int id, string username)
+        //    {
+        //        this.file = file;
+        //        this.id = id;
+        //        this.username = username;
+        //    }
 
     }
     //private void uploadwholefile(httprequestbase request)
