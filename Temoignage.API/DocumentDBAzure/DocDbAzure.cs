@@ -22,12 +22,12 @@ namespace Temoignage.API.DocumentDBAzure
             var response = docClient.UpsertDocumentAsync(collTemoignageUri, temoignage, disableAutomaticIdGeneration: true).Result;
         }
 
-        public static void InsertDocument(TemoingnageJsn temoignage)
+        public async static void InsertDocument(TemoingnageJsn temoignage)
         {
             try
             {
                 //var reponse = docClient.CreateDocumentAsync(collTemoignageUri, temoignage).Result;
-                docClient.CreateDocumentAsync(collTemoignageUri, temoignage);
+                await docClient.CreateDocumentAsync(collTemoignageUri, temoignage);
             }
             catch (Exception e)
             {
