@@ -11,24 +11,26 @@ namespace Temoignage.API.DocumentDBAzure
         static Uri docAccountUri = new Uri("https://temoignagedb.documents.azure.com:443/");
         static DocumentClient docClient = new DocumentClient(docAccountUri, "2WxpSk5O18zS0dkvcBZrG6OFncEjWffMmnQhr84J2rfvZADVnNHEI1fX1XOGbnp4oCQEHG1zHHuULFMe9Ui1ZQ==");
         static string dbId = "Temoingnage";
-        static string collId = "TemoingnageCollection";
+        static string collIdTemoignage = "TemoingnageCollection";
+         static string collIdClient = "clientCollection";
         static Uri dbUri = new Uri($"dbs/{dbId}", UriKind.Relative);
-        static Uri collUri = new Uri($"dbs/{dbId}/colls/{collId}", UriKind.Relative);
+        static Uri collTemoignageUri = new Uri($"dbs/{dbId}/colls/{collIdTemoignage}", UriKind.Relative);
+        static Uri collClientUri = new Uri($"dbs/{dbId}/colls/{collIdClient}", UriKind.Relative);
 
         public static void UpsertDocument(TemoingnageJsn temoignage)
         {
-            var response = docClient.UpsertDocumentAsync(collUri, temoignage, disableAutomaticIdGeneration: true).Result;
+            var response = docClient.UpsertDocumentAsync(collTemoignageUri, temoignage, disableAutomaticIdGeneration: true).Result;
         }
 
         public static void InsertDocument(TemoingnageJsn temoignage)
         {
             try
             {
-                var reponse = docClient.CreateDocumentAsync(collUri, temoignage).Result;
+                var reponse = docClient.CreateDocumentAsync(collTemoignageUri, temoignage).Result;
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
 
         }
@@ -37,11 +39,11 @@ namespace Temoignage.API.DocumentDBAzure
         {
             try
             {
-                var reponse = docClient.CreateDocumentAsync(collUri, client).Result;
+                var reponse = docClient.CreateDocumentAsync(collClientUri, client).Result;
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
             
         }

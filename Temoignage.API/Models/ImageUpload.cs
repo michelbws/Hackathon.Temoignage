@@ -12,17 +12,12 @@ namespace Temoignage.API.Models
     public class DescriptionErreur
     {
 
-        public string typeErreur
-        {
-            get;
-            set;
-        }
-        public string messageErreur
-        {
-            get;
-            set;
-        }
-    //    [Key]
+        public string typeErreur { get; set; }
+        public string messageErreur { get; set; }
+    }
+}
+
+//    [Key]
     //    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     //    public string clientId
     //    {
@@ -62,4 +57,4 @@ namespace Temoignage.API.Models
     //    }
 
     //}
-}
+//}

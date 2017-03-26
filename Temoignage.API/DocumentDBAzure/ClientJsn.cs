@@ -15,6 +15,12 @@ namespace Temoignage.API.DocumentDBAzure
         [JsonProperty(PropertyName = "Prenom")]
         public string Prenom { get; set; }
 
+        [JsonProperty(PropertyName = "Email")]
+        public string Email { get; set; }
+
+        [JsonProperty(PropertyName = "Telephone")]
+        public string Telphone { get; set; }
+
         [JsonProperty(PropertyName = "Id")]
         public string Id { get; set; }
     }
