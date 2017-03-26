@@ -29,7 +29,7 @@ namespace Temoignage.API.Models
             get;
             set;
         }
-        public long ratioImportance 
+        public Int32 ratioImportance 
         {
             get;
             set;

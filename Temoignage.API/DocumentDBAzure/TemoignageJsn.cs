@@ -17,7 +17,7 @@ namespace Temoignage.API.DocumentDBAzure
         public string Description { get; set; }
 
         [JsonProperty(PropertyName = "altDescription")]
-        public string Name { get; set; }
+        public string AltDescription { get; set; }
 
         [JsonProperty(PropertyName = "gps")]
         public string Gps { get; set; }
@@ -32,7 +32,7 @@ namespace Temoignage.API.DocumentDBAzure
         public Int32 RatioImportance { get; set; }
 
         [JsonProperty(PropertyName = "imageData")]
-        public Image ImageData { get; set; }
+        public string ImageData { get; set; }
 
     }
 
