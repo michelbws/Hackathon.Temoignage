@@ -22,9 +22,28 @@ namespace Temoignage.API.DocumentDBAzure
 
         public static void InsertDocument(TemoingnageJsn temoignage)
         {
-            var reponse = docClient.CreateDocumentAsync(collUri, temoignage).Result;
+            try
+            {
+                var reponse = docClient.CreateDocumentAsync(collUri, temoignage).Result;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
 
         }
 
+        public static void InsertDocument(ClientJsn client)
+        {
+            try
+            {
+                var reponse = docClient.CreateDocumentAsync(collUri, client).Result;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            
+        }
     }
 }
