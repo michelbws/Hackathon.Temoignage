@@ -10,7 +10,7 @@ namespace Temoignage.API.Controllers
     public class MichelController : ApiController
     {
         // GET: Michel
-        public string Index()
+        public string Get()
         {
             return "bonjour";
         }
