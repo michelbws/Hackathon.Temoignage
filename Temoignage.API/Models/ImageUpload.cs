@@ -9,24 +9,46 @@ using System.Web.Http;
 
 namespace Temoignage.API.Models
 {
-    public class FileUpload
+    public class ImageUpload
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int imageid
+        public string clientId
         {
             get;
             set;
         }
-        public string imagename
+        
+        public string imageURL
         {
             get;
             set;
         }
-        public byte[] imagedata
+        public string alt
         {
             get;
             set;
-        } //this property is used to insert a  information of Image in byte format  
+        }
+        public long ratioImportance 
+        {
+            get;
+            set;
+        }
+        public string metaData
+        {
+            get;
+            set;
+        }
+        public string textDescription
+        {
+            get;
+            set;
+        }
+        public string gps
+        {
+            get;
+            set;
+        }
+
     }
 }

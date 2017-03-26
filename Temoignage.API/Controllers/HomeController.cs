@@ -10,13 +10,13 @@ namespace Temoignage.API.Controllers
 {
     public class HomeController : ApiController
     {
-        //public Media get(string file, int id, string username )
-        public Media get()
+        public Media get(string clientId, int id, string username )
+        
         {
             
             //ViewBag.Title = "Home Page";
-            Media tMedia = new Media();
-            Media xMedia = new Media("johnson", 423, "helloworld");
+            Media tMedia = new Media(clientId, id, username);
+            tMedia.insert ou create 
             return tMedia;
         }
     }
@@ -24,7 +24,7 @@ namespace Temoignage.API.Controllers
     {
         public string file;
 
-        public int id = 1234;
+        public int id;
 
         public string username;
 
