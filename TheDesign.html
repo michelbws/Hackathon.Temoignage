@@ -7,11 +7,26 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
     <div id="example">
         <div class="demo-section k-header">
             <h3>Image Upload</h3>
             <br />
             <div>
+
+                <form name="changePhoto" action="" id="formUploadAvatar" enctype="multipart/form-data" method="post">
+                    <img data-bind="attr:{src: Avatar}" alt="" width="150" height="150" />
+                    <div class="button-change-picture">
+                        <label class="cdm_btnBrowse cdm_btn_general" data-bind="visible: ModeEdition" style="display:none">
+                            <input type="hidden" id="rcid" data-bind="value: Rcid" />
+                            <input type="file" required id="avatar" name="avatar" data-bind="event: {change: ChangeAvatar} " />
+                            @*<button id="lblBtnUploadImage" class="button-action button-secondary">Choisir une nouvelle photo</button>*@
+                            <span id="lblBtnUploadImage" class="button-action button-secondary button-choose-picture"><span class="cbcrc-icon-edit" data-bind="text: LblBtnUploadImage, css:ClassBtnUpload()">Choisir une nouvelle photo</span></span>
+                            <span class="msg-has-error" data-bind="visible: AvatarErrorMessage()!='', text: AvatarErrorMessage"></span>
+                            <em>Fichiers acceptés: .jpg, .gif, .png <br />5 Mo maximum</em>
+                        </label>
+                    </div>
+                </form>
                 <label for="fileUpload"/>
                     Select File to Upload:
 
