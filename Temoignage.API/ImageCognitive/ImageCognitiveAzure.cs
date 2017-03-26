@@ -23,6 +23,7 @@ namespace Temoignage.API.ImageCognitive
             using (var fs = new FileStream(@"C:\Vision\Sample.jpg", FileMode.Open))
             {
                 //analysisResult = await visionClient.AnalyzeImageAsync(fs, features);
+                //
             }
         }
          
