@@ -18,8 +18,8 @@ namespace Temoignage.API.Controllers
                                         string textDescription, Int32 ratio)
         {
             ImageUpload imgInfoObj = new ImageUpload(Id, gps, url, alt, metaData, textDescription, ratio);
-            //TemoingnageJsn infoImg = new TemoingnageJsn { ClientId = Id, Description = textDescription, Gps = gps,
-            //ImageData = metaData, AltDescription = alt, RatioImportance = ratio, UrlImage = url};
+            TemoingnageJsn infoImg = new TemoingnageJsn { ClientId = Id, Description = textDescription, Gps = gps,
+            ImageData = metaData, AltDescription = alt, RatioImportance = ratio, UrlImage = url};
 
             //DocDbAzure.InsertDocument(infoImg);
             
